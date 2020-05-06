@@ -1,13 +1,13 @@
 import React from 'react'
 import { connect } from "react-redux";
 
-const Titulares = ({titulares}) => (
+const Suplentes = ({suplentes}) => (
     <section>
-        <h2>Titulares</h2>
-        <div className="campo">
+        <h2>Suplentes</h2>
+        <div className="suplentes">
             {
-                titulares.map(jugador => (
-                    <article className="titular" key={jugador.id}>
+                suplentes.map(jugador => (
+                    <article className="suplentes" key={jugador.id}>
                         <div>
                             <img src={jugador.foto} alt={jugador.nombre} />
                             <button>X</button>
@@ -21,9 +21,9 @@ const Titulares = ({titulares}) => (
 )
 
 const mapStateToProps = (state) => ({
-    titulares: state.titulares,
+    suplentes: state.suplentes,
   });
   
   const mapDispatchToProps = (dispatch) => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Titulares)
+export default connect(mapStateToProps, mapDispatchToProps)(Suplentes)

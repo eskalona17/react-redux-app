@@ -20,8 +20,7 @@ const initialState = {
     {
       id: 4,
       nombre: "Roberto Carlos",
-      foto:
-        "https://www.w3schools.com/howto/img_avatar.png",
+      foto: "https://www.w3schools.com/howto/img_avatar.png",
     },
     {
       id: 5,
@@ -96,15 +95,19 @@ const reducerEntrenador = (state = initialState, action) => {
   if (action.type === "QUITAR_TITULAR") {
     return {
       ...state,
-      titulares: state.titulares.filter(jugador => jugador.id !== action.jugador.id),
-      jugadores: state.jugadores.concat(action.jugador)
+      titulares: state.titulares.filter(
+        (jugador) => jugador.id !== action.jugador.id
+      ),
+      jugadores: state.jugadores.concat(action.jugador),
     };
   }
   if (action.type === "QUITAR_SUPLENTE") {
     return {
       ...state,
-      suplentes: state.suplentes.filter(jugador => jugador.id !== action.jugador.id),
-      jugadores: state.jugadores.concat(action.jugador)
+      suplentes: state.suplentes.filter(
+        (jugador) => jugador.id !== action.jugador.id
+      ),
+      jugadores: state.jugadores.concat(action.jugador),
     };
   }
   return state;

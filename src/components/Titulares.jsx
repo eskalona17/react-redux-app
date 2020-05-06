@@ -1,21 +1,23 @@
 import React from 'react'
 import { connect } from "react-redux";
+import cancha from '../cancha.svg'
 
-const Titulares = ({titulares, quitarTitukar}) => (
+const Titulares = ({titulares, quitarTitular}) => (
     <section>
         <h2>Titulares</h2>
-        <div className="campo">
+        <div className="cancha">
             {
                 titulares.map(jugador => (
                     <article className="titular" key={jugador.id}>
                         <div>
                             <img src={jugador.foto} alt={jugador.nombre} />
-                            <button onClick={() => quitarTitukar(jugador)}>X</button>
+                            <button onClick={() => quitarTitular(jugador)}>X</button>
                         </div>
                         <p>{jugador.nombre}</p>
                     </article>
                 ))
             }
+            <img src={cancha} alt="campo de futbol" />
         </div>
     </section>
 )
@@ -25,7 +27,7 @@ const mapStateToProps = (state) => ({
   });
   
   const mapDispatchToProps = (dispatch) => ({
-      quitarTitukar(jugador) {
+    quitarTitular(jugador) {
           dispatch({
               type: "QUITAR_TITULAR",
               jugador

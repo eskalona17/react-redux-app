@@ -7,10 +7,10 @@ const Suplentes = ({suplentes, quitarSuplente}) => (
         <div className="suplentes">
             {
                 suplentes.map(jugador => (
-                    <article className="suplentes" key={jugador.id}>
+                    <article className="suplente" key={jugador.id}>
                         <div>
                             <img src={jugador.foto} alt={jugador.nombre} />
-                            <button onClick={() => quitarSuplente()}>X</button>
+                            <button onClick={() => quitarSuplente(jugador)}>X</button>
                         </div>
                         <p>{jugador.nombre}</p>
                     </article>
